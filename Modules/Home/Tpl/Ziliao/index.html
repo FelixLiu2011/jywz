@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Roselove</title>
+<link rel="stylesheet" type="text/css" href="__APP__/Public1/css/style.css">
+
+</head>
+
+<body>
+	<div class="center_center">
+    	<div class="pengyou">
+        	<img src="__APP__/Public1/images/n_left_group.jpg">{$Think.lang.YONGHUZILIAO}
+        </div> 
+        <ul>
+        	<li style="width:120px;background:#D77295;"><a href="__APP__/Ziliao" style="color:white">{$Think.lang.JIBENXINXI}</a></li>
+            <li style="width:120px;"><a href="__APP__/Touxiang">{$Think.lang.TOUXIANGSHEZHI}</a></li>
+            <li style="width:120px;"><a href="__APP__/Xiugaimima">{$Think.lang.XIUGAIMIMA}</a></li>
+        </ul>
+        <div class="ziliao">
+            <form action="__APP__/Ziliao/update" method="post" name="form">
+                <ul>
+                <li class="left_left_1"><span>{$Think.lang.YONGHUMING}	{$Think.session.admin}</span></li>
+                <li class="left_left"><span>{$Think.lang.XINGBIE} {$list[0]["yhxb"]}</span></li>
+                <li><input type="text" name="yhsg" value="{$list[0]["yhsg"]}"><span>{$Think.lang.SHENGAO}</span></li>
+                <li><input type="text" name="yhtz" value="{$list[0]["yhtz"]}"><span>{$Think.lang.TIZHONG}</span></li>
+                <li><input type="text" name="gjdq" value="{$list[0]["gjdq"]}"><span>{$Think.lang.CHENGSHI}</span></li>
+                <li><input type="text" name="yhsr" value="{$list[0]["yhsr"]}"><span>{$Think.lang.SHENGRI}</span></li>
+                <li><input type="text" name="yhzj" value="{$list[0]["yhzj"]}"><span>{$Think.lang.ZONGJIAO}</span></li>
+                <li><input type="text" name="yhxl" value="{$list[0]["yhxl"]}"><span>{$Think.lang.XUELI}</span></li>
+                <li><input type="text" name="yhnsr" value="{$list[0]["yhnsr"]}"><span>{$Think.lang.NIANSHOURU}</span></li>
+                <li><input type="text" name="yhxz" value="{$list[0]["yhxz"]}"><span>{$Think.lang.XINGZUO}</span></li>
+                <li><input type="text" name="hlzt" value="{$list[0]["hlzt"]}"><span>{$Think.lang.HUNYINZHUANGTAI}</span></li>
+                </ul>
+                <div class="tj"><input type="submit" name="" value="{$Think.lang.TIJIAO}"></div>
+            </form> 
+        </div>            
+    </div>
+</body>
+</html>

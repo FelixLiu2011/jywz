@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Roselove</title>
+<link rel="stylesheet" type="text/css" href="__APP__/Public1/css/style.css">
+
+</head>
+
+<body>
+	<div class="center_center">
+    	<div class="pengyou">
+			<p style="display:inline-block;">{$Think.lang.ZUIXINZHAOPIAN}</p>
+            <a href="__APP__/Haoyouzhuye/hyxc1/yhid/{$yhid}">{$Think.lang.GENGDUO}</a>           
+        </div>
+        <volist name="a" id="b">
+        <div class="hyzp_1"><a href="__APP__/Haoyouzhuye/hyxc/id/{$b.id}"><img src="__APP__/Public1/images/{$b.xctp}"></a></div>
+        </volist>
+        <div class="clear"></div>
+        <div class="pengyou">
+			<p style="display:inline-block;">{$Think.lang.ZUIXINRIZHI}</p>
+            <a href="__APP__/Haoyouzhuye/hyrz/yhid/{$yhid}">{$Think.lang.GENGDUO}</a>
+            <div class="rizhi_2"><a href="__APP__/Haoyouzhuye/rznr/id/{$c[0]['id']}">{$c[0]["rzbt"]}</a></div>
+        </div>
+        <div class="clear"></div>
+        <div class="pengyou">
+			<p style="display:inline-block;">{$Think.lang.ZUIXINLIUYAN}</p>
+            <a href="__APP__/Haoyouzhuye/hyly/yhid/{$yhid}">{$Think.lang.GENGDUO}</a>
+            <div class="rizhi_2"><a href="__APP__/Haoyouzhuye/lynr/id/{$e[0]['id']}"><if condition="$e[0]['lyzh'] eq ''"><else/>{$Think.lang.LAIZI} {$e[0]["lyzh"]}{$Think.lang.DELIUYAN}</if></a></div>
+        </div>       
+    </div>
+</body>
+</html>

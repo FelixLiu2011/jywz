@@ -1,0 +1,29 @@
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="__APP__/Public1/js/jquery-1.8.2.min.js"></script>
+<link href="__APP__/Public1/css/rizhilist.css" rel="stylesheet" type="text/css">
+<title>Roselove</title>
+</head>
+<body>
+<div style="width:640px; height:700px;">
+<div id="yonghu">
+	<div class="biaoti">{$aa[0]["yhzh"]} {$Think.lang.DEXIANGCE}
+	<a href="__APP__/Xiangce/shangchuan/xcmc/{$aa[0]['xcmc']}" target="kuangjia" style="text-decoration:none;color:#fff;"><button>{$Think.lang.SHANGCHUANZHAOPIAN}</button></a>
+	<a href="__APP__/Xiangce/scxc/xcmc/{$aa[0]['xcmc']}" target="kuangjia" style="text-decoration:none;color:#fff;"><button style="margin-right:10px;">{$Think.lang.SHANCHUXIANGCE}</button></a>
+	</div>
+</div>
+<volist name="list" id="user">
+<div class="xc"><a href="__APP__/Xiangce/zhaopian1/id/{$user.id}"><img src="__APP__/Public1/images/{$user.xctp}"></a></div>
+</volist>
+<div class="miaosu">
+	<p>{$Think.lang.XIANGCE}:{$aa[0]['xcmc']}</p>
+    <p>{$Think.lang.MIAOSHU}:{$aa[0]['xcms']}</p>
+</div>
+<div class="center_4">
+            <ul>
+            	<li class="kuan" style="border:none;margin-left:200px;"><a href="#">{$pagestr}</a></li>
+            </ul>          
+</div>
+</body>
+</html>

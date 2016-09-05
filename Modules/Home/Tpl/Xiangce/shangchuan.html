@@ -1,0 +1,40 @@
+<html><head><script type="text/javascript" src="__APP__/Public1/js/jquery-1.8.2.min.js"></script>
+<link href="__APP__/Public1/css/xiangce.css" rel="stylesheet" type="text/css">
+
+<meta charset="utf-8">
+<title>Roselove</title>
+</head><body marginwidth="0" marginheight="0">
+
+<div style="width:640px; height:640px;">
+
+<div class="biaoti">
+	{$Think.lang.WODEXIANGCE}	
+</div>
+<div class="list_nav">
+	<div><a class="click" href="__APP__/Xiangce" target="kuangjia">{$Think.lang.WODEXIANGCE}</a></div>
+	<div><a href="__APP__/Pengyou" target="kuangjia">{$Think.lang.HAOYOUXIANGCE}</a></div>
+</div>
+<div class="xiangce_xinxi">
+	<form action="__APP__/Xiangce/shangchuanadd" method="post" enctype="multipart/form-data" onSubmit="return check()">
+		<table  style="float:left;">
+			<tbody>
+		
+			<tr>
+				<td>{$Think.lang.SHANGCHUANXIANGPIAN} : </td>
+				<td>({$Think.lang.MEIZHANGBUNENGCHAOGUO} 1M,{$Think.lang.TUPIANLEIXINGWEI} jpg | png | gif)</td>
+			</tr>
+			<tr>
+				<td><input type="hidden" name="xcmc" value="{$xcmc}" /></td>
+				<td><input type="file" name="xctp" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" name="submit" value="{$Think.lang.SHANGCHUAN}" ></td>
+			</tr>
+		</tbody></table>
+	</form> 
+</div>
+</div>
+
+</body>
+</html>

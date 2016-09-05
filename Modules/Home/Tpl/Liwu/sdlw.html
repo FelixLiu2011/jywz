@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Roselove</title>
+<link rel="stylesheet" type="text/css" href="__APP__/Public1/css/style.css">
+
+</head>
+
+<body>
+	<div class="center_center">
+		<ul>
+        	<li><a href="__APP__/Liwu">{$Think.lang.SONGLIWU}</a></li>
+            <li style="width:95px;background:#D77295;"><a href="__APP__/Liwu/sdlw" style="color:white">{$Think.lang.SHOUDAODELIWU}</a></li>
+            <li><a href="__APP__/Liwu/sclw">{$Think.lang.SONGCHUDELIWU}</a></li>
+        </ul>
+        <table class="table_1">
+        	<tr>
+            	<th>{$Think.lang.XVHAO}</th>
+                <th>{$Think.lang.TUPIAN}</th>
+                <th>{$Think.lang.LIWULEIXING}</th>
+                <th>{$Think.lang.ZENGSONGREN}</th>
+                <th>{$Think.lang.SHULIANG}</th>
+                <th>{$Think.lang.ZENGSONGSHIJIAN}</th>
+            </tr>
+            <volist name="list" id="user">
+            <tr>
+            	<td style="text-align:center;">{$user.id}</td>
+            	<td style="text-align:center;"><img src="__APP__/Public/images/{$user.tp}" width="70px" height="70px;"/></td>
+            	<td style="text-align:center;">{$user.lwlx}</td>
+            	<td style="text-align:center;">{$user.zsr}</td>
+            	<td style="text-align:center;">{$user.sl}</td>
+            	<td style="text-align:center;">{$user.zssj}</td>
+            </tr>
+            </volist>
+            <tr>
+            	<td colspan="6" style="text-align:center;">{$pagestr}</td>
+            </tr>
+            
+        </table>
+        	
+    </div>
+</body>
+</html>

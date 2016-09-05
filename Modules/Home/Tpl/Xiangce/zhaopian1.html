@@ -1,0 +1,31 @@
+﻿<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="__APP__/Public1/js/jquery-1.8.2.min.js"></script>
+<link href="__APP__/Public1/css/rizhilist.css" rel="stylesheet" type="text/css">
+<title>Roselove</title>
+</head>
+<body>
+<div style="width:640px; height:700px;">
+<div id="yonghu">
+	<div class="biaoti">
+	{$yhzh} {$Think.lang.DEXIANGCE}
+	<a href="__APP__/Xiangce/sczp/id/{$id}" target="kuangjia" style="text-decoration:none;color:#fff;"><button style="margin-right:10px;">{$Think.lang.SHANCHUZHAOPIAN}</button></a>
+	</div>
+</div>
+<div class="gundong">
+	<p> {$Think.lang.SHANGCHUANSHIJIAN}：{$list[0]["scsj"]}</p>
+    <nav style="margin: 0 auto;">
+    <ul >
+    	<li class="shangxia"><a href="__APP__/Xiangce/zhaopian1/id/{$s}"><img src="__APP__/Public1/images/arrow_l.png"></a></li>
+        <li class="chicun" ><a href="#"><img src="__APP__/Public1/images/{$list[0]['xctp']}" ></a></li>
+        <li class="shangxia_2"><a href="__APP__/Xiangce/zhaopian1/id/{$x}"><img src="__APP__/Public1/images/arrow_r.png"></a></li>
+    </ul>
+    </nav>
+    <div class="clear"></div>
+    <div class="chakan"><a href="__APP__/Public1/images/{$list[0]['xctp']}" target="_blank">{$Think.lang.CHAKANYUANTU}</a></div>
+    <div class="fanhui"><a href="__APP__/Xiangce">{$Think.lang.FANHUIXIANGCELIEBIAO}</a></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Roselove</title>
+<link rel="stylesheet" type="text/css" href="__APP__/Public1/css/style.css">
+
+</head>
+
+<body>
+	<div class="center_center">
+    	<div class="pengyou">
+			<p style="display:inline-block; font-size:18px; font-weight:bold;">{$Think.lang.LIWULIEBIAO}</p>
+            <a href="javascript:history.go(-1);" style="width:95px;">{$Think.lang.FANHUILIWU}</a>           
+        </div>
+        <div class="liwu_22"><img src="__APP__/Public/images/{$list[0]['lwtp']}"></div>
+        <div class="liwu_right">
+            <form method="post" action="__APP__/Haoyouzhuye/szslw">
+            <input type="hidden" name="tp" value="{$list[0]['lwtp']}"/>
+            <input type="hidden" name="lwjg" value="{$list[0]['lwjg']}"/>
+                <ul>
+                <p><img src="__APP__/Public1/images/s_main_46.gif"><span>{$list[0]['lwjg']}.00</span></p>
+                <li><span>{$Think.lang.SHULIANG}：</span><input type="text" name="sl"></li>
+                <li><span>{$Think.lang.HAOYOU}：</span>
+                    <select name="zsdx">
+                        <option selected = "selected">-{$Think.lang.QINGXUANZE}-</option>
+                    	<volist name="qq" id="b">
+                    	<option>{$b.pyzh}</option>
+                        </volist>
+                    </select>
+                </li>
+                <li><span>{$Think.lang.ZENGYAN}：</span><textarea name=""></textarea></li>
+                </ul>
+                <div class="zengsong"><input type="submit" name="" value="{$Think.lang.ZENGSONG}"></div>
+            </form> 
+        </div>
+        <div class="clear"></div>
+        <div class="lwxq">
+        	<p>{$Think.lang.LIWUXIANGQING}</p>
+        </div> 
+    </div>
+
+</html>

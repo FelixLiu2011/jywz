@@ -1,0 +1,34 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Roselove</title>
+<link rel="stylesheet" type="text/css" href="__APP__/Public1/css/style.css">
+
+</head>
+
+<body>
+	<div class="center_center">
+    	<div class="pengyou">
+        	<img src="__APP__/Public1/images/n_left_group.jpg">{$Think.lang.YONGHUZILIAO}
+        </div> 
+        <ul>
+        	<li style="width:120px;"><a href="__APP__/Ziliao">{$Think.lang.JIBENXINXI}</a></li>
+            <li style="width:120px;background:#D77295;"><a href="__APP__/Touxiang" style="color:white">{$Think.lang.TOUXIANGSHEZHI}</a></li>
+            <li style="width:120px;"><a href="__APP__/Xiugaimima">{$Think.lang.XIUGAIMIMA}</a></li>
+        </ul>
+        <div class="gif">
+            <img src="__APP__/Public1/images/{$list[0]['yhtx']}">
+        </div> 
+        <div class="fangfa"><p>{$Think.lang.TOUXIANGGUIGE}：	200×200 {$Think.lang.XIANGSUDAXIAO}</p></div>
+        <div class="fangfa"><p>{$Think.lang.NINKEYITONGGUOYIXIAFANGSHIGENGXINNINDETOUXIANGSHEZHI}</p></div>
+        <div class="shang">   
+        <form id="form" name="form" method="post" action="__APP__/Ziliao/touxiang" enctype="multipart/form-data">
+        	<input type="file" name="yhtx" value="">
+            <input type="submit" value="{$Think.lang.SHANGCHUAN}" name="submit" class="chuan">
+        </form> 
+        </div>  
+        <div class="fangfa"><p>{$Think.lang.DIANJISHANGCHUANZHIHOUQINGDIANJIF5SHUAXINYEMIAN}</p></div>  
+    </div>
+</body>
+</html>

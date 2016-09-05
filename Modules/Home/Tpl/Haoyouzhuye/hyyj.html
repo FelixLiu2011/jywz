@@ -1,0 +1,24 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Roselove</title>
+<link rel="stylesheet" type="text/css" href="__APP__/Public1/css/style.css">
+
+</head>
+
+<body>
+	<div class="center_center">     
+		<div class="fasong">
+        	<form name="form" action="__APP__/Haoyouzhuye/fyj" method="post">
+                <textarea cols='' rows='' name="nr"></textarea>
+                <select name="sjzh">
+                    <option selected = "selected" >{$sjzh}</option>	<!-- 收件帐号 -->
+                </select>
+                <input type="hidden" name="fjzh" value="{$fjzh}" />		<!--  -->
+                <input type="submit" name="submit" value="{$Think.lang.TIJIAO}">
+            </form>
+        </div>         
+    </div>
+</body>
+</html>

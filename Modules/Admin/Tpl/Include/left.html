@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link type="text/css" href="__APP__/Public/css/css.css" rel="stylesheet"/>
+
+
+<link rel="stylesheet" type="text/css" href="__APP__/Public/css/css.css">
+<script type="text/javascript" src="__APP__/Public/js/jquery-1.8.3.min.js"></script>
+<script src="__APP__/Public/js/jquery.js"></script>
+<script type="text/javascript">
+	//jQuery的入口程序
+	$(function(){
+	   $("ul>li").click(function(){
+			$(this).next("ol").slideToggle("slow");
+	   });
+	});
+</script>
+<script type="text/javascript">
+	//jQuery的入口程序
+	$(function(){
+	   $("ul>li<a").click(function(){
+			$(this).next("ol").slideToggle("slow");
+	   });
+	});
+</script>
+
+
+
+
+<script type="text/javascript" src="__APP__/Public/jquery/jquery-1.7.1.js"></script>
+
+<script  type="text/javascript">
+$(function(){
+	$(".parent").click(function(){
+		$(this).siblings(".c_"+this.id).toggle();
+	});
+});
+</script>
+
+<!--让所有超链接文件内容在框架name=frmright部分显示-->
+<base target="frmright" />
+
+</head>
+
+<body>
+<div class="frameleft" >
+
+	<div class="left" style=" width:100%;">
+    	<div class="left-top"><h2>会员系统</h2></div>
+       
+        <ul>
+        	<li><a href="#"  onclick="return false"><img src="__APP__/Public/images/1_11.png"><p>用户中心</p></a></li>
+            	<ol class="yc">
+                	<li><a href="__APP__/Admin/Glb"><p></p><span>管理员</span></a></li>
+                	<li><a href="__APP__/Admin/Yhb"><p></p><span>查看用户</span></a></li>
+                	<li><a href="__APP__/Admin/Pengyou"><p></p><span>用户朋友圈</span></a></li>
+                	<li><a href="__APP__/Admin/Shou"><p></p><span>收件箱</span></a></li>
+                	<li><a href="__APP__/Admin/Fa"><p></p><span>发件箱</span></a></li>
+                	<li><a href="__APP__/Admin/Xiangce"><p></p><span>用户相册</span></a></li>
+                	<li><a href="__APP__/Admin/Zhaopian"><p></p><span>用户照片</span></a></li>
+                	<li><a href="__APP__/Admin/Rizhi"><p></p><span>用户日志</span></a></li>
+                	<li><a href="__APP__/Admin/Liuyan"><p></p><span>用户留言</span></a></li>
+                	<li><a href="__APP__/Admin/Xnliwu"><p></p><span>虚拟礼物</span></a></li>
+                	<li><a href="__APP__/Admin/Zsliwu"><p></p><span>真实礼物</span></a></li>
+                </ol>
+                
+             
+        </ul>
+    </div>
+</div>
+
+
+</body>
+</html>

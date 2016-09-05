@@ -1,0 +1,27 @@
+body {font-size:12px;font-family:'Microsoft-Yahei';}
+#yonghu {width:100%;}
+.biaoti {border-bottom:1px solid #ddd;padding-bottom:12px;height:23px;line-height:23px;font-weight:700;font-size:14px;background:url(appbg.gif) no-repeat 0 -40px;text-indent:30px;}
+button {margin-left:15px;display:block;float:right;border:0;width:100px;height:30px;line-height:30px;color:#fff;background:#00CFFF;outline:none;text-align:center;}
+
+
+
+
+
+
+
+div {margin:0;padding:0;}
+.biaoti>button{ margin-right:10px;}
+.list_nav {margin-top:10px;width:640px;background:#F8F8F8;border-radius:5px 5px 0 0;height:35px;border-bottom:1px solid #ddd;}
+.list_nav div {background:#fff;float:left;margin-top:10px;margin-left:20px;}
+.list_nav div a {background:#fff;padding:6px 5px;color:#D77294;background:#fff;display:block;float:left;text-align:center;cursor:pointer;text-decoration:none;}
+.list_nav div a:hover {color:#D77294;}
+.list_nav div a.click {background:#D77294;color:#fff;}
+table tr td {padding:10px 0;width:1%;font-size:12px;}
+table tr td:nth-child(odd) {text-align:right;}
+table tr td:nth-child(even) {padding-left:10px;}
+input[type="text"] {padding:6px 0;width:315px;border:1px #d2d2d2 solid;outline:none;}
+.none {display:none;}
+input[type="submit"] {background:#00CFFF;color:#fff;padding:8px 20px;border:0;cursor:pointer;}
+.shangchuan {background:#00CFFF;color:#fff;padding:8px 12px;display:inline-block;margin-left:10px;cursor:pointer;}
+.none {display:none;}
+select {padding:6px 0;}

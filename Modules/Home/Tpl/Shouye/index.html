@@ -1,0 +1,34 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Roselove</title>
+<link rel="stylesheet" type="text/css" href="__APP__/Public1/css/style.css">
+</head>
+
+<body>
+<div class="center_center">
+		<ul>
+        	<li style="background:#D77295;"><a href="__APP__/Shouye" style="color:white">{$Think.lang.YONGHULIEBIAO}</a></li>
+            <li><a href="__APP__/Rizhi">{$Think.lang.RIZHI}</a></li>
+            <li><a href="__APP__/Xiangce">{$Think.lang.XIANGCE}</a></li>
+        </ul>
+        <div class="center_3">
+        	<volist name="q1" id="user">
+            <div class="center_2">
+            	<a href="__APP__/Haoyouzhuye/index/yhid/{$user.yhid}" target="_blank"><img src="__APP__/Public1/images/{$user.yhtx}" class="dx"></a>
+                <a href="__APP__/Haoyouzhuye/index/yhid/{$user.yhid}" ><p>{$user.yhzh}<if condition="$user.yhhy eq 1"><img src="__APP__/Public1/images/user_vip.jpg" style="width:16px; height:9px"/><else/></if></p></a>
+                <a href="__APP__/Shouye/pengyou/pyzh/{$user.yhzh}"><img src="__APP__/Public1/images/jj.jpg" class="gd">{$Think.lang.JIAHAOYOU}</a>
+                <p style="width:130px;margin-left:2px;">{$Think.lang.SUOZAIDI}：<if condition="$user.gjdq eq ''">{$Think.lang.WEISHEZHI}<else/>{$user.gjdq}</if></p>
+            </div>
+            </volist>
+            
+            <div class="center_4">
+            <ul>
+            	<li class="kuan" style="float:left;width:100%;border:none"><a href="#">{$pagestr}</a></li>
+            </ul>          
+            </div>
+        </div>       
+    </div>
+</body>
+</html>

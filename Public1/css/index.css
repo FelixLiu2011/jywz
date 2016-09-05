@@ -1,0 +1,7 @@
+﻿#login {width:370px;height:385px;color:#333;background:url(../images/reg_bg.png);border:solid 1px #ddd;z-index:1000;position:absolute;right:439px;top:107px;}
+#login .biaoti {background:none;color:#333;font-weight:700;font-size:20px;height:40px;white-space:nowrap;border-bottom:1px solid #ccc;margin:20px auto;text-indent:20px;width:300px;}
+#login input.text {background:#cce8cf;width:220px;height:25px;line-height:25px;border:1px solid #ccc;}
+#login select {background:#cce8cf;width:60px;height:25px;line-height:25px;border:1px solid #ccc;}
+#login input[type="submit"] {margin-left:107px;background:#66a54c;width:65px;height:30px;line-height:30px;border:0;color:#fff;font-weight:bold;cursor:pointer;margin-top:15px;}
+#login span {display:inline-block;width:100px;height:25px;line-height:25px;padding:0 5px 0 0;text-align:right;}
+#login .hang {margin:10px 0 10px 0;}

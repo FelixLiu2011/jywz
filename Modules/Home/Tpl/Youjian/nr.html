@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Roselove</title>
+<link rel="stylesheet" type="text/css" href="__APP__/Public1/css/style.css">
+
+</head>
+
+<body>
+	<div class="center_center">
+		<ul>
+            <li><a href="__APP__/Youjian">{$Think.lang.FAJIANXIANG}</a></li>
+        </ul>     
+		<div class="fasong">
+        	<form action="__APP__/Youjian/sc/id/{$a[0]['id']}" method="post" name="form">
+                <div class="a1">{$a[0]['nr']}</div>
+                	{$Think.lang.SHOUJIANZHANGHAO}:{$a[0]['sjzh']}<input type="submit" name="submit" value="{$Think.lang.SHANCHU}">
+            </form>
+        </div>         
+    </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+[ 2016-09-04T22:52:13+08:00 ] 0.0.0.0 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.004000s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.076005s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.095006s ]
+
+[ 2016-09-04T23:31:46+08:00 ] 0.0.0.0 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.034002s ]
+INFO: CheckLang Behavior ::run [ RunTime:0.079004s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.166009s ]
+

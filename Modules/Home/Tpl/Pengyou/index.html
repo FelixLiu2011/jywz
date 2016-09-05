@@ -1,0 +1,37 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Roselove</title>
+<link rel="stylesheet" type="text/css" href="__APP__/Public1/css/style.css">
+
+</head>
+
+<body>
+	<div class="center_center">
+    	<div class="pengyou">
+        	<img src="__APP__/Public1/images/n_left_group.jpg">{$Think.lang.PENGYOUQUAN}
+            <a href="__APP__/Pengyou/tianjia" style="width:95px;">{$Think.lang.TIANJIAHAOYOU}</a>
+        </div>
+		<ul>
+        	<li style="width:95px;"><a href="__APP__/Pengyou">{$Think.lang.HAOYOULIEBIAO}</a></li>
+        </ul>
+		<div class="center_3">
+			
+        	<volist name="q1" id="user">
+            <div class="center_2">
+            	<a href="__APP__/Haoyouzhuye/index/yhid/{$user.yhid}" target="_blank"><img src="__APP__/Public1/images/{$user.yhtx}" class="dx"></a>
+                <a href="__APP__/Haoyouzhuye/index/yhid/{$user.yhid}" target="_blank"><p>{$user.yhzh}</p></a>
+                <p style="width:130px;margin-left:2px;">{$Think.lang.SUOZAIDI}：<if condition="$user.gjdq eq ''">{$Think.lang.WEISHEZHI}<else/>{$user.gjdq}</if></p>
+            </div>
+            </volist>
+            
+            <div class="center_4">
+            <ul>
+            	<li class="kuan" style="float:left;width:100%;border:none"><a href="#">{$pagestr}</a></li>
+            </ul>          
+            </div>
+        </div>       
+    </div>
+</body>
+</html>

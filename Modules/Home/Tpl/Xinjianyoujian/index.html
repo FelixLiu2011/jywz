@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Roselove</title>
+<link rel="stylesheet" type="text/css" href="__APP__/Public1/css/style.css">
+
+</head>
+
+<body>
+	<div class="center_center">
+		<ul>
+        	<li><a href="__APP__/Youjian">{$Think.lang.FAJIANXIANG}</a></li>
+            <li><a href="__APP__/Fa">{$Think.lang.SHOUJIANXIANG}</a></li>
+            <li style="background:#D77295;"><a href="__APP__/Xinjianyoujian" style="color:white">{$Think.lang.XINJIANYOUJIAN}</a></li>
+        </ul>     
+		<div class="fasong">
+        	<form action="__APP__/Xinjianyoujian/youjianadd" method="post" name="form">
+                <textarea cols='' rows='' name="nr"></textarea>
+                <select name="sjzh">
+                	<volist name="list" id="user">
+                    <option>{$user.pyzh}</option>
+                    </volist>
+                </select>
+                <input type="submit" name="" value="{$Think.lang.TIJIAO}">
+            </form>
+        </div>         
+    </div>
+</body>
+</html>

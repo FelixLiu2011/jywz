@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>后台管理</title>
+<link rel="stylesheet" type="text/css" href="__APP__/Public/css/css.css">
+<script type="text/javascript" src="__APP__/Public/js/jquery-1.8.3.min.js"></script>
+<script src="__APP__/Public/js/jquery.js"></script>
+<script type="text/javascript">
+	//jQuery的入口程序
+	$(function(){
+	   $("ul>li").click(function(){
+			$(this).next("ol").slideToggle("slow");
+	   });
+	});
+</script>
+<script type="text/javascript">
+	//jQuery的入口程序
+	$(function(){
+	   $("ul>li<a").click(function(){
+			$(this).next("ol").slideToggle("slow");
+	   });
+	});
+</script>
+</head>
+
+<body>
+
+    <div class="right" style="width:100%; ">
+        <div class="clear"></div>
+        <!-- right -->
+		
+        <div class="table-box" >
+        	<div class="tianjia" style="float:left;margin-top:5px;margin-left:10px;"><a href="__APP__/Admin/Glb/insert"><h1>添加</h1></a></div>
+    		<table class="table1" style="float:left; margin-left:10px;">
+                <tr>
+                	<th>编号</th>
+                    <th>帐号</th>
+                    <th>密码</th>
+                    <th>注册时间</th>
+                    <th>操作</th>
+                </tr>
+                <volist name="list" id="user">
+                <tr>
+                    <td>{$user.id}</td>
+                    <td>{$user.zh}</td>
+                    <td>{$user.mm}</td>
+                    <td>{$user.zcsj}</td>
+                    <td class="xq">
+				<a href='javascript:if(confirm("确认删除")) location.href="__APP__/Admin/Glb/deleteglb/id/{$user.id}"' style="display:block;width:30px;margin-left:70px">删除</a>
+				<a href="__APP__/Admin/Glb/edit/id/{$user.id}" style="display:block;margin-left:0px">编辑</a>
+                    </td>
+                </tr>
+                </volist>
+                <tr><th colspan="5">{$pagestr}</th></tr>
+            </table>
+            <div class="clear"></div>
+                <div class="c1" style="width:550px;"></div>
+        </div>
+        <!-- end right -->
+    </div>
+
+</body>
+</html>

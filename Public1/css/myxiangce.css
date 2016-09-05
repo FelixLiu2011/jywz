@@ -1,0 +1,30 @@
+body {font-size:12px;font-family:'Microsoft-Yahei';}
+div {margin:0;padding:0;}
+a {text-decoration:none;}
+.biaoti {border-bottom:1px solid #ddd;padding-bottom:12px;height:23px;line-height:23px;font-weight:700;font-size:14px;background:url(../images/appbg.gif) no-repeat 0 -280px;text-indent:30px;}
+.biaoti>button{ margin-right:10px;}
+.list_nav {margin-top:10px;width:640px;background:#F8F8F8;border-radius:5px 5px 0 0;height:35px;border-bottom:1px solid #ddd;}
+.list_nav div {background:#fff;float:left;margin-top:10px;margin-left:20px;}
+.list_nav div a {background:#fff;padding:6px 5px;color:#D77294;background:#fff;display:block;float:left;text-align:center;cursor:pointer;text-decoration:none;}
+.list_nav div a:hover {color:#D77294;}
+.list_nav div a.click {background:#D77294;color:#fff;}
+.xiangce_fengmian {background:url(album_bg.gif) no-repeat;width:159px;text-align:center;margin-top:12px;margin-left:10px;float:left;}
+.xiangce_fengmian img {height:130px;width:130px;padding:9px 0;}
+.xiangce_list {margin-top:25px;}
+.xiangce {border:#ccc 1px solid;height:168px;width:100%;margin-top:10px;}
+.xiangce_xinxi{float:left;margin-top:15px;margin-left:12px;}
+.xiangceming {margin-bottom:15px;}
+.xiangceming a {color:#D62863;font-weight:700;font-size:15px;}
+.biaoqian {margin-bottom:7px;}
+.bianji a {color:#D77294;}
+.num {color:#aaa;margin-bottom:7px;}
+.bianji {margin-top:15px;}
+
+
+
+#yonghu {width:100%;}
+
+button {margin-left:15px;display:block;float:right;border:0;width:100px;height:30px;line-height:30px;color:#fff;background:#00CFFF;outline:none;text-align:center;}
+
+
+

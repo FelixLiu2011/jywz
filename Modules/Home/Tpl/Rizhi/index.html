@@ -1,0 +1,33 @@
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="__APP__/Public1/js/jquery-1.8.2.min.js"></script>
+<link href="__APP__/Public1/css/rizhilist.css" rel="stylesheet" type="text/css">
+<title>Roselove</title>
+</head>
+<body>
+
+<div style="width:640px; height:700px;">
+<div id="yonghu">
+	<div class="biaoti">{$Think.lang.WODERIZHI}<a href="__APP__/Rizhi/chuangjian" target="kuangjia" style="text-decoration:none;color:#fff;"><button style="margin-right:10px;">{$Think.lang.CHUANGJIANRIZHI}</button></a></div>
+</div>
+<div class="list_nav">
+	<div><a class="click" href="__APP__/Rizhi" target="kuangjia">{$Think.lang.WODERIZHI}</a></div>
+	<div><a href="__APP__/Pengyou">{$Think.lang.HAOYOURIZHI}</a></div>
+</div>
+
+<div class="rizhi" id="itemContainer">
+	<volist name="list" id="user">
+        		
+                <a href="__APP__/Rizhi/nr/id/{$user.id}" style="color:black"><p>{$user.rzbt}<span>{$user.scsj}</span></p></a>
+    </volist>
+            <div class="xia">{$pagestr}</div>
+</div>
+
+ <style>
+ .rizhi p{border-bottom:1px solid #CCC;}
+.rizhi span{float:right; margin-right:15px;}
+ 
+ </style>
+</body>
+</html>

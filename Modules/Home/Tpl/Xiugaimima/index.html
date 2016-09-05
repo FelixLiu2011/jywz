@@ -1,0 +1,71 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Roselove</title>
+<link rel="stylesheet" type="text/css" href="__APP__/Public1/css/style.css">
+<script type="text/javascript">
+
+function ck()
+{
+
+	var ysmm=document.getElementById("ysmm").value;
+	var xmm	=document.getElementById("xmm")	.value;
+	var cfmm=document.getElementById("cfmm").value;
+
+	
+
+	if(ysmm=="")
+	{
+		alert("请输入原始密码");
+		document.getElementById("ysmm").focus();
+		return false;
+	}
+	if(xmm=="")
+	{
+		alert("请输入新密码");
+		document.getElementById("xmm").focus();
+		return false;
+	}
+	if(cfmm=="")
+	{
+		alert("请重复新密码");
+		document.getElementById("cfmm").focus();
+		return false;
+	}
+	if(cfmm!=xmm)
+	{
+		alert("两次密码不相同");
+		document.getElementById("cfmm").focus();
+		return false;
+	}
+	
+
+	
+}
+</script> 
+</head>
+
+<body>
+	<div class="center_center">
+    	<div class="pengyou">
+        	<img src="__APP__/Public1/images/n_left_group.jpg">{$Think.lang.YONGHUZILIAO}
+        </div> 
+        <ul>
+        	<li style="width:120px;"><a href="__APP__/Ziliao">{$Think.lang.JIBENXINXI}</a></li>
+            <li style="width:120px;"><a href="__APP__/Touxiang">{$Think.lang.TOUXIANGSHEZHI}</a></li>
+            <li style="width:120px;background:#D77295;"><a href="__APP__/Xiugaimima" style="color:white">{$Think.lang.XIUGAIMIMA}</a></li>
+        </ul>
+        <div class="ziliao">
+            <form id="form" name="form" method="post" action="__APP__/Ziliao/mima" onsubmit="return ck()">
+                <ul>
+                <li><input type="text" id="ysmm" name="ysmm" value=""><span>{$Think.lang.YUANSHIMIMA}</span></li>
+                <li><input type="text" id="xmm" name="xmm" value=""><span>{$Think.lang.XINMIMA}</span></li>
+                <li><input type="text" id="cfmm" name="cfmm" value=""><span>{$Think.lang.CHONGFUMIMA}</span></li>
+                </ul>
+                <div class="tj"><input type="submit" name="" value="{$Think.lang.TIJIAO}"></div>
+            </form> 
+        </div>            
+    </div>
+</body>
+</html>

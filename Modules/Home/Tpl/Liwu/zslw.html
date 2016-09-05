@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Roselove</title>
+<link rel="stylesheet" type="text/css" href="__APP__/Public1/css/style.css">
+
+</head>
+
+<body>
+	<div class="center_center">
+		<ul>
+        	<li style="background:#D77295;"><a href="__APP__/Liwu" style="color:white">{$Think.lang.SONGLIWU}</a></li>
+            <li style="width:95px;"><a href="__APP__/Liwu/sdlw">{$Think.lang.SHOUDAODELIWU}</a></li>
+            <li><a href="__APP__/Liwu/sclw">{$Think.lang.SONGCHUDELIWU}</a></li>
+        </ul>
+        <div class="liwu">
+            <ul>
+                <li style="width:95px;margin-left:15px;"><a href="__APP__/Liwu">{$Think.lang.XVNILIWU}</a></li>
+                <li class="xuni" style="width:95px;"><a href="__APP__/Liwu/zslw">{$Think.lang.ZHENSHILIWU}</a></li>
+            </ul>
+        </div>
+        <div class="center_3">
+        	<volist name="list" id="user">
+        	<div class="liwu_1">
+            	<a href="__APP__/Liwu/zslwxq/id/{$user.id}"><div class="liwu_2"><img src="__APP__/Public/images/{$user.lwtp}"></div></a>
+                <p style="margin-left:0px;text-align:center;">{$user.lwmc}</p>
+                <img src="__APP__/Public1/images/s_main_46.gif"><span>{$user.lwjg}.00</span>
+            </div>
+            </volist>
+            
+            
+            <div class="center_4">
+            <ul>
+            	<li class="kuan" style="margin:auto;border:1px solid white;width:100%;text-align:center;"><a href="#">{$pagestr}</a></li>
+            </ul>          
+            </div>
+        </div>       
+    </div>
+</body>
+</html>

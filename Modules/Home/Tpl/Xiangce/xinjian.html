@@ -1,0 +1,86 @@
+﻿<html>
+<head>
+<title>Roselove</title>
+<script type="text/javascript" src="__APP__/Public1/js/jquery-1.8.2.min.js"></script>
+
+<meta charset="utf-8">
+<link href="__APP__/Public1/css/xinjianxiangce.css" rel="stylesheet" type="text/css">
+
+</head>
+<div style="width:640px; height:640px;">
+<body marginwidth="0" marginheight="0">
+<div class="biaoti">
+	{$Think.lang.WODEXIANGCE}	
+</div>
+<div class="list_nav">
+	<div><a class="click" href="__APP__/Xiangce" target="kuangjia">{$Think.lang.WODEXIANGCE}</a></div>
+	<div><a href="__APP__/Pengyou" target="kuangjia">{$Think.lang.HAOYOUXIANGCE}</a></div>
+</div>
+<div class="xiangce_xinxi">
+	<form action="__APP__/Xiangce/tianjia" method="post"  enctype="multipart/form-data">
+		<table>
+			<tbody><tr>
+				<td>{$Think.lang.XIANGCEMINGCHENG} : </td>
+				<td><input type="text" name="xcmc"></td>
+			</tr>
+			<tr>
+				<td style="vertical-align:top;">{$Think.lang.XIANGCEMIAOSHU} : </td>
+				<td><textarea name="xcms"></textarea></td>
+			</tr>
+			<tr>
+				<td>{$Think.lang.BIAOQIAN} : </td>
+				<td><input type="text" name="xcbq"></td>
+			</tr>
+			<tr>
+				<td>{$Think.lang.XIANGCEFENGMIAN} : </td>
+				<td><input type="file" name="xcfm"></td>
+			</tr>
+			<tr>
+				<td>{$Think.lang.KEJIANXING} : </td>
+				<td><input type="radio" name="kjx" checked="" value="仅自己可见">{$Think.lang.JINZIJIKEJIAN}<input type="radio" name="kjx" value="好友可见">{$Think.lang.HAOYOUKEJIAN}</td>
+			</tr>
+			
+				<tr>
+				<td></td>
+				<td><input type="submit" name="submit" value="{$Think.lang.CHUANGJIAN}"></td>
+			</tr>
+		</tbody></table>
+	</form>
+</div>
+<script> 
+	function check(){
+		var id='-1';
+		var xiangceming = $("input[name='data[xiangceming]']").val();
+		var kejianxing = $("input[name='data[kejianxing]']:checked").val();
+		if(kejianxing=="3"){
+			$("input[name='fenzu']").each(function(){
+				if($(this).attr("checked")){
+					id += ','+$(this).attr("rel");
+					
+				}
+			});
+			$("input[name='data[fenzu]'").val(id);
+		}
+		if(xiangceming==''){
+			alert("相册名不能为空");return false;
+		}else if(kejianxing=='3'&&id=="-1"){
+			alert("请选择好友分组");return false;
+		}else{
+			return true;
+		}
+	}
+	$(function(){
+		$("input[type='radio']").change(function(){
+			var rel = $(this).val();
+			if(rel=="3"){
+				$(".fenzu").removeClass("none");
+			}else{
+				$(".fenzu").addClass("none");
+				$("input[type='checkbox']").attr("checked",false);
+			}
+		});
+	})
+</script>
+</body>
+</div>
+</html>

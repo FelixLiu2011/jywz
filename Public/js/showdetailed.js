@@ -1,0 +1,12 @@
+$(document).ready(function(){
+    $("#select6").val($("#hid1").val());
+    $("#select7").val($("#hid2").val());
+    $("#select8").val($("#hid3").val());
+    $("#select9").val($("#hid4").val());
+    $("#select10").val($("#hid5").val());
+    $("#select11").val($("#hid6").val());
+    $("#select1").val($("#hid7").val());
+    $("#select2").val($("#hid8").val());
+    $("#select3").val($("#hid9").val());
+    $("#select4").val($("#hid10").val())   
+});

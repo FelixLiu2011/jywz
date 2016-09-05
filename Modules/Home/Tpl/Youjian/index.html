@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Roselove</title>
+<link rel="stylesheet" type="text/css" href="__APP__/Public1/css/style.css">
+
+</head>
+
+<body>
+	<div class="center_center">
+		<ul>
+        	<li style="background:#D77295;"><a href="__APP__/Youjian" style="color:white">{$Think.lang.FAJIANXIANG}</a></li>
+            <li><a href="__APP__/Fa">{$Think.lang.SHOUJIANXIANG}</a></li>
+            <li><a href="__APP__/Xinjianyoujian">{$Think.lang.XINJIANYOUJIAN}</a></li>
+        </ul>
+        <div class="shoujian">
+        	<volist name="list" id="user">
+        		<input type="hidden" value="{$user.id}" />
+                <a href="__APP__/Youjian/nr/id/{$user.id}"><p>{$user.nr}<span>{$user.fjsj}</span></p></a> 
+            </volist>
+            <div class="xia">{$pagestr}</div>
+         </div>
+    </div>
+</body>
+</html>

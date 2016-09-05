@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Roselove</title>
+<link rel="stylesheet" type="text/css" href="__APP__/Public1/css/style.css">
+<link rel="stylesheet" type="text/css" href="__APP__/Public1/css/reveal.css">
+<script type="text/javascript" src="__APP__/Public1/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="__APP__/Public1/js/jquery.reveal.js"></script>
+<link href="__APP__/Public1/css/rizhilist.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="center_center">
+    	<div class="pengyou">
+        	<img src="__APP__/Public1/images/n_left_group.jpg">{$yhzh} {$Think.lang.LIUYANBAN}
+            <a href="__APP__/Haoyouzhu/hyly" class="big-link" data-reveal-id="myModal" style="width:100px;">{$Think.lang.WOYAOLIUYAN}</a>
+        </div>
+            <div class="rizhi" id="itemContainer">
+				<volist name="list" id="user">       		
+                <a href="__APP__/Haoyouzhuye/lynr/id/{$user.id}" style="color:black"><p>{$Think.lang.LAIZI} {$user.lyzh}{$Think.lang.DELIUYAN}<span>{$user.lysj}</span></p></a>
+    			</volist>
+    		</div>
+            <div class="xia">{$pagestr}</div>
+</div>
+   
+                <div id="myModal" class="reveal-modal">
+			<h1>{$Think.lang.LIUYAN}</h1>
+            <form id="form" name="form" method="post" action="__APP__/Haoyouzhuye/lyjs">
+            <input type="hidden" name="yhzh" value="{$yhzh}" />
+            <input type="hidden" name="lyzh" value="{$yhzh1}" />
+			<textarea cols='' rows='' name="lynr"></textarea>
+            <div class="dazhaohu"><input type="submit" name="" value="{$Think.lang.TIJIAO}"></div>
+            </form>
+			</div>
+</body>
+</html>
