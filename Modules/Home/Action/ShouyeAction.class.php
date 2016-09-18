@@ -15,7 +15,7 @@ class ShouyeAction extends CommAction{
 		$p=I("p",1);
 		 
 		$m=M("yhb");
-		 
+		
 		import ("ORG.Util.Page");
 		 
 		$count=$m->count();
@@ -40,7 +40,7 @@ class ShouyeAction extends CommAction{
 		
 		$this->display();
 	}
-public function pengyou($pyzh)
+		public function pengyou($pyzh)
 		{
 			$yhzh=$_SESSION["admin"];
 			$pyzh=$_REQUEST["pyzh"];

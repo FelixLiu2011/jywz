@@ -38,7 +38,7 @@ public function index()
 				
 			$count=$w->where("$where")->count();
 				
-			$page=new Page($count,5);
+			$page=new Page($count,12);
 			
 			$t="%first% %upPage% %downPage% %prePage%";
 			
@@ -76,9 +76,27 @@ public function index()
 		$pyzh=$_REQUEST["pyzh"];
 		
 		$m=M();
-		$list=$m->query("select * from yhb where yhzh='$pyzh'");
+		$list=$m->query("select * from yhb where yhzh like '%$pyzh%' limit 0,12");
 		$this->assign("list",$list);
 		
 		$this->display();
+	}
+	public function scpy()
+	{
+		$yhzh=$_SESSION["admin"];
+		$pyid=$_REQUEST["yhid"];
+		$qq=M("yhb");
+		$qq1=$qq->where("yhid='$pyid'")->select();
+		$pyzh=$qq1[0]["yhzh"];
+		$m=M();
+		$a=$m->execute("delete from pengyou where pyzh='$pyzh' and yhzh='$yhzh'");
+		if($a)
+		{
+			$this->success("Delete success","__APP__/Home/Pengyou",1);
+		}
+		else
+		{
+			$this->error("Delete error","__APP__/Home/Pengyou",1);
+		}
 	}
 }

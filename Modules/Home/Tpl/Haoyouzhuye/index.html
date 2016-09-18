@@ -14,7 +14,7 @@
 <body>
 <div class="top">
 	<div class="top_1">
-    	<a href="__APP__"><img src="__APP__/Public1/images/roselove.png"></a>
+    	<a href="__APP__/Home/Index/index"><img src="__APP__/Public1/images/roselove.png"></a>
         <ul class="nav">
         	<li><a href="__APP__">{$Think.lang.SHOUYE}</a></li>
             <li><a href="__APP__/Kongjian" target="kuangjia">{$Think.lang.KONGJIAN}</a></li>
@@ -57,7 +57,7 @@
 	<div class="center_left" id="top2">
     	<div class="center_tx">
         	<img src="__APP__/Public1/images/{$list[0]['yhtx']}">
-            <a href="#">{$list[0]["yhzh"]}</a>
+            <a href="#">{$list[0]["yhzh"]}</a>&nbsp;<if condition="$list[0]['yhhy'] eq 1"><img src="__APP__/Public1/images/user_vip.jpg" style="width:16px; height:9px"/><else/></if>
             <div class="center_1"><img src="__APP__/Public1/images/xingbie.gif">{$list[0]['yhxb']}</div>
         </div>
         <ul>

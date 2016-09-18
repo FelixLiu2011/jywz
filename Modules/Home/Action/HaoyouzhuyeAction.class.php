@@ -3,8 +3,26 @@ class HaoyouzhuyeAction extends CommAction
 {
 	public function index()
 	{
+		@$id=$_REQUEST["dzhid"];
+		if($id)
+		{
+			$y=M();
+			$y->execute("update dzh set sfdq=1 where id='$id'");
+		}
 		$yhzh=$_SESSION["admin"];
-		$yhid=$_REQUEST["yhid"];
+		$yhid=$_REQUEST["yhid"];	//朋友id
+		$y=M("yhb");
+		$aaa=$y->where("yhzh='$yhzh'")->select();
+		$ckid=$aaa[0]["yhid"];//46 用户id
+		$qq=M("yhb");
+		$qq1=$qq->where("yhid='$yhid'")->select();
+		
+		$ckmc=$aaa[0]["yhzh"];
+		$cktx=$aaa[0]["yhtx"];
+		//var_dump($yhid,$yhmc,$yhtx,$ckid);
+		//die();
+		
+		
 		
 		$_SESSION["yhid"]=$yhid;
 		$m=M("yhb");
@@ -15,6 +33,8 @@ class HaoyouzhuyeAction extends CommAction
 		}	
 		else
 		{
+			$t=M();
+			$t->execute("insert into zjll (yhid,pyid,pytx,pymc) values ($yhid,$ckid,'$cktx','$ckmc') ");
 			$this->assign("list",$list);
 		
 
@@ -23,6 +43,7 @@ class HaoyouzhuyeAction extends CommAction
 			$q=M();
 			$aa=$q->query("select * from yhb where yhzh <> '$yhzh' limit 0,5");
 			$this->assign("aa",$aa);
+			
 			$this->display();
 		}
 		
@@ -377,22 +398,77 @@ public function addhy()
 		
 		$f=$e->where("yhzh='$sjzh'")->select();		//用户表中的用户
 
-		
 		$yhid=$f[0]["yhid"];		//用户表中的朋友id
 		
 		$nr=$_REQUEST["nr"];
-		$m=M();
-		$a=$m->execute("insert into fajian (yhzh,sjzh,nr) values ('$fjzh','$sjzh','$nr') ");
-		$w=M();
-		$b=$w->execute("insert into shoujian (yhzh,fjzh,nr) values ('$sjzh','$fjzh','$nr') ");
-		if($a && $b)
+
+		//
+		$y=M();
+		$yy=$y->query("select * from yhb where yhzh='$fjzh'");
+		$yyy=$yy[0]['yhhy'];	//是否会员
+		
+		if($yyy)
 		{
-			$this->success("发送成功","__APP__/Haoyouzhuye/hykj/yhid/$yhid",1);
+			$m=M();
+			$a=$m->execute("insert into fajian (yhzh,sjzh,nr) values ('$fjzh','$sjzh','$nr') ");
+			$w=M();
+			$b=$w->execute("insert into shoujian (yhzh,fjzh,nr) values ('$sjzh','$fjzh','$nr') ");
+			if($a && $b)
+			{
+				$this->success("发送成功","__APP__/Haoyouzhuye/hykj/yhid/$yhid",1);
+			}
+			else 
+			{
+				$this->error("发送失败","__APP__/Haoyouzhuye/hykj/yhid/$yhid",1);
+			}
 		}
-		else 
+		else
 		{
-			$this->error("发送失败","__APP__/Haoyouzhuye/hykj/yhid/$yhid",1);
+			$zt=date("Y-m-d H:i:s",strtotime("-1 day"));	//昨天
+			$mt=date("Y-m-d H:i:s",strtotime("+1 day"));	//明天
+			$c=M();
+			$c1=$c->query("select count(*) from fyjb where yhzh='$fjzh' and sj>'$zt' and sj<'$mt'");
+			$count=$c1[0]['count(*)'];
+			$v=M();
+			$vv=$v->query("select * from fsyj where id=1");
+			$vvv=$vv[0]['sl'];
+			//var_dump($vvv);die();
+			if($count<$vvv)
+			{
+				if($sjzh)
+				{
+					$m=M();
+					$a=$m->execute("insert into fajian (yhzh,sjzh,nr) values ('$fjzh','$sjzh','$nr')");
+					$q=M();
+					$b=$q->execute("insert into shoujian (yhzh,fjzh,nr) values ('$sjzh','$fjzh','$nr')");
+					if($a)
+					{
+						if($b)
+						{
+							$i=M();
+							$i->execute("insert into fyjb(yhzh) values ('$fjzh')");
+							$this->success("发送成功","__APP__/Haoyouzhuye/hykj/yhid/$yhid",1);
+						}
+						else 
+						{
+							$this->error("发送失败","__APP__/Haoyouzhuye/hykj/yhid/$yhid",1);
+						}
+					}
+				}
+				else
+				{
+					$this->error("发送失败","__APP__/Haoyouzhuye/hykj/yhid/$yhid",1);
+				}
+			}
+			else
+			{
+				$this->error("权限不足","__APP__/Haoyouzhuye/hykj/yhid/$yhid",1);
+			}
 		}
+		
+
+
+		
 	}
 	
 	public function czzx()
@@ -528,11 +604,13 @@ public function addhy()
 		$q=M("yhb");
 		$aa=$q->where("yhzh='$yhzh'")->select();
 		$yhid=$aa[0]["yhid"];
+		$aa1=$q->where("yhzh='$dfzh'")->select();
+		$dfid=$aa1[0]["yhid"];
 		
 		
 		$nr=$_REQUEST["d"];
 		$m=M();
-		$a=$m->execute("insert into dzh (dfzh,yhzh,nr) values ('$dfzh','$yhzh','$nr') ");
+		$a=$m->execute("insert into dzh (dfid,dfzh,yhzh,nr) values ($dfid,'$dfzh','$yhzh','$nr') ");
 		if($a)
 		{
 			$this->success("发送成功","__APP__/Haoyouzhuye/index/yhid/$yhid",1);

@@ -15,14 +15,17 @@
         </div>
 		<ul>
         	<li style="width:95px;"><a href="__APP__/Pengyou">{$Think.lang.HAOYOULIEBIAO}</a></li>
+		<li style="width:120px;"><a href="__APP__/Pengyou/haoyouyaoqing">{$Think.lang.HAOYOUYAOQING}</a></li>
         </ul>
 		<div class="center_3">
 			
         	<volist name="q1" id="user">
-            <div class="center_2">
+            <div class="center_2" id="top50">
             	<a href="__APP__/Haoyouzhuye/index/yhid/{$user.yhid}" target="_blank"><img src="__APP__/Public1/images/{$user.yhtx}" class="dx"></a>
                 <a href="__APP__/Haoyouzhuye/index/yhid/{$user.yhid}" target="_blank"><p>{$user.yhzh}</p></a>
-                <p style="width:130px;margin-left:2px;">{$Think.lang.SUOZAIDI}：<if condition="$user.gjdq eq ''">{$Think.lang.WEISHEZHI}<else/>{$user.gjdq}</if></p>
+                <p style="width:130px;margin-left:2px;" class="szd">{$Think.lang.SUOZAIDI}：<if condition="$user.gjdq eq ''">{$Think.lang.WEISHEZHI}<else/>{$user.gjdq}</if></p>
+		<p class="shanchu"><a href='javascript:if(confirm("确认删除")) location.href="__APP__/Home/Pengyou/scpy/yhid/{$user.yhid}"' style="color:black">删除好友</a></p>
+		
             </div>
             </volist>
             

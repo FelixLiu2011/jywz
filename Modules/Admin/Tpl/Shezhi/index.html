@@ -62,59 +62,18 @@
         
     		<table class="table1" style="float:left; margin-left:10px;">
                 <tr>
-                	<th>用户编号</th>
-                    <th>用户帐号</th>
-                    <th>用户性别</th>
-                    <th>用户邮箱</th>
-                    <th>用户身高</th>
-                    <th>用户体重</th>
-                    <th>国家地区</th>
-                    <th>用户生日</th>
-                    <th>用户宗教</th>
-                    <th>用户学历</th>
-                    <th>年收入</th>
-                    <th>用户星座</th>
-                    <th>婚恋状态</th>
-                    <th>用户头像</th>
-                    <th>用户金币</th>
-                    <th>是否会员</th>
+                    <th>设置邮件发送数量</th>
                     <th>操作</th>
                 </tr>
                 <volist name="list" id="user">
                 <tr>
-                    <td>{$user.yhid}</td>
-                    <td>{$user.yhzh}</td>
-                    <td>{$user.yhxb}</td>
-                    <td>{$user.yhyx}</td>
-                    <td>{$user.yhsg}</td>
-                    <td>{$user.yhtz}</td>
-                    <td>{$user.gjdq}</td>
-                    <td>{$user.yhsr}</td>
-                    <td>{$user.yhzj}</td>
-                    <td>{$user.yhxl}</td>
-                    <td>{$user.yhnsr}</td>
-                    <td>{$user.yhxz}</td>
-                    <td>{$user.hlzt}</td>
-                    <td>
-                    	<img src="__APP__/Public1/images/{$user.yhtx}" width="50"/>
-                    </td>
-                    <td>{$user.yhjb}</td>
-                    <td><a href="__APP__/Admin/Yhb/yhbbs/yhid/{$user.yhid}" style="color:red;">
-			<if condition="$user.yhhy eq 0">
-                    	非会员
-                    	<else/>
-                    	会员
-                    	</if>
-			</a>
-                    </td>
+                    <td>{$user.sl}</td>
                     <td class="xq">
-				  <form>
-                </form>
-				<a href='javascript:if(confirm("确认删除")) location.href="__APP__/Admin/Yhb/deleteyhb/yhid/{$user.yhid}"' style="margin-left:10%; width:50px;">删除</a>
+			<a href='__APP__/Admin/Shezhi/edit/id/{$user.id}'>修改</a>
                     </td>
                 </tr>
                 </volist>
-                <tr><th colspan="17">{$pagestr}</th></tr>
+                <tr><th colspan="2"></th></tr>
             </table>
             <div class="clear"></div>
                 <div class="c1" style="width:550px;"></div>

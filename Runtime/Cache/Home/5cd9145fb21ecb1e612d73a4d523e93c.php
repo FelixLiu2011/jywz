@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<?php if (!defined('THINK_PATH')) exit();?>﻿<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -43,9 +43,9 @@ function aa()
         <div class="zhuce">
             <form  action="__APP__/Login/denglu" method="post" name="form">
                 <ul>
-                    <li><span>{$Think.lang.YONGHUMING}：</span><input type="text" name="yhzh" autocomplete="off"></li>
-                    <li style="margin-left:10px;"><span>{$Think.lang.MIMA}：</span><input type="password" name="yhmm"  autocomplete="off"></li>
-                    <li><input type="submit" name="" value="{$Think.lang.DENGLU}" style="background:#42ABD9;height:22px;width:60px;color:#FFF;border:none;cursor:pointer;"></li>
+                    <li><span><?php echo (L("YONGHUMING")); ?>：</span><input type="text" name="yhzh" autocomplete="off"></li>
+                    <li style="margin-left:10px;"><span><?php echo (L("MIMA")); ?>：</span><input type="password" name="yhmm"  autocomplete="off"></li>
+                    <li><input type="submit" name="" value="<?php echo (L("DENGLU")); ?>" style="background:#42ABD9;height:22px;width:60px;color:#FFF;border:none;cursor:pointer;"></li>
                 </ul>
             </form>
         </div>
@@ -65,44 +65,42 @@ function aa()
             </ul>
         </div>
             <div class="zhuce_zh">
-            	<h2>{$Think.lang.XINLAIDE}？  {$Think.lang.YIQIHIGH}......</h2>
+            	<h2><?php echo (L("XINLAIDE")); ?>？  <?php echo (L("YIQIHIGH")); ?>......</h2>
             	<form action="__APP__/Login/login" method="post" name="form1">
                 	<ul>
-                    	<li><input type="text" name="yhzh" id="yhzh" autocomplete="off"><span>{$Think.lang.YONGHUMING}:</span></li>
-                        <li><input type="password" name="yhmm" id="yhmm" autocomplete="off"><span>{$Think.lang.MIMA}:</span></li>
-                        <li><input type="password" name="yhmm1" id="yhmm1" autocomplete="off"><span>{$Think.lang.CHONGFUMIMA}:</span></li>
-                        <li><input type="text" name="yhyx" id="yhyx" autocomplete="off"><span>{$Think.lang.YOUXIANG}:</span></li>
+                    	<li><input type="text" name="yhzh" id="yhzh" autocomplete="off"><span><?php echo (L("YONGHUMING")); ?>:</span></li>
+                        <li><input type="password" name="yhmm" id="yhmm" autocomplete="off"><span><?php echo (L("MIMA")); ?>:</span></li>
+                        <li><input type="password" name="yhmm1" id="yhmm1" autocomplete="off"><span><?php echo (L("CHONGFUMIMA")); ?>:</span></li>
+                        <li><input type="text" name="yhyx" id="yhyx" autocomplete="off"><span><?php echo (L("YOUXIANG")); ?>:</span></li>
                         <li>
                             <select  name="yhxb" style="float:right;margin-right:120px;background:#CCE8CF;height:25px;width:50px;">
-                                <option selected = "selected"  value="男">{$Think.lang.NAN}</option>
-                                <option value="女">{$Think.lang.NV}</option>
+                                <option selected = "selected"  value="男"><?php echo (L("NAN")); ?></option>
+                                <option value="女"><?php echo (L("NV")); ?></option>
                             </select>
-                            <span>{$Think.lang.XINGBIE}:</span>
+                            <span><?php echo (L("XINGBIE")); ?>:</span>
 						</li>
                         <li>
                         <a href='javascript:aa()'>
                         <img src="__APP__/Login/getImage" id="img" width="80" height="30" title="看不清楚？点击切换"/>
                         </a>
                         <input type="text" name="code" style="width:70px;height:25px;">
-                        <span>{$Think.lang.YANZHENGMA}:</span>
+                        <span><?php echo (L("YANZHENGMA")); ?>:</span>
                         
                         </li>
-                        <li><input type="button" name="" onclick="validate()"  value="{$Think.lang.ZHUCE}" style="margin-left:55px;line-height:25px; cursor:pointer;"></li>
+                        <li><input type="button" name="" onclick="validate()"  value="<?php echo (L("ZHUCE")); ?>" style="margin-left:55px;line-height:25px; cursor:pointer;"></li>
                     </ul>
                 </form>
             </div>
-            <div class="Members">{$Think.lang.HUIYUANTUIJIAN}</div>
+            <div class="Members"><?php echo (L("HUIYUANTUIJIAN")); ?></div>
 <div class="scroll-outer">
 	<div id="scroll" class="owl-carousel">
-		<volist name="list" id="user">
-	        <div class="item">
-				<a href="#"><img src="__APP__/Public1/images/{$user.yhtx}" alt=""></a>
+		<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$user): $mod = ($i % 2 );++$i;?><div class="item">
+				<a href="#"><img src="__APP__/Public1/images/<?php echo ($user["yhtx"]); ?>" alt=""></a>
 	            <div class="clear"></div>
 				<div class="txt">
-					<h4><a href="#">{$user.yhzh}</a></h4>
+					<h4><a href="#"><?php echo ($user["yhzh"]); ?></a></h4>
 				</div>
-			</div> 
-		</volist>    
+			</div><?php endforeach; endif; else: echo "" ;endif; ?>    
 	</div>
 </div>
 <div class="clear"></div>
@@ -116,11 +114,11 @@ function aa()
             <li><a href="?l=en-us">English</a></li>
         </ul>
         <ul class="bottom_2">
-        	<li><a href="__APP__/Index/gywm">{$Think.lang.GUANYUWOMEN}</a></li>
+        	<li><a href="__APP__/Index/gywm"><?php echo (L("GUANYUWOMEN")); ?></a></li>
             <li style="margin:0 5px;">|</li>
-            <li><a href="__APP__/Index/lxwm">{$Think.lang.LIANXIWOMEN}</a></li>
+            <li><a href="__APP__/Index/lxwm"><?php echo (L("LIANXIWOMEN")); ?></a></li>
             <li style="margin:0 5px;">|</li>
-            <li><a href="__APP__/Index/bzzx">{$Think.lang.BANGZHUZHONGXIN}</a></li>
+            <li><a href="__APP__/Index/bzzx"><?php echo (L("BANGZHUZHONGXIN")); ?></a></li>
         </ul>
     </div>
 </div>
@@ -137,19 +135,19 @@ function aa()
 		if(username.match(reg)){
 			if(password.match(reg2)){
 				if($("#yhmm").val()!=$("#yhmm1").val()){
-					alert("{$Think.lang.LIANGCIMIMABUYIZHI}");
+					alert("俩次密码不一致");
 				}else{
 					if(email.match(reg3)){
 						$('form').submit();
 					}else{	
-						alert("{$Think.lang.QINGSHURUZHENGQUEDEYOUXIANGDIZHI}");
+						alert("请输入正确的邮箱地址");
 					}
 				}
 			}else{
-				alert("{$Think.lang.MIMAYOUYINGWENZIMUHESHUZIZUCHENG,CHANGDUZAI6-18ZHIJIAN}");
+				alert("密码由英文字母和数字组成,长度在6-18之间");
 			}
 		}else{
-			alert("{$Think.lang.YONGHUMINGBIXVYIZIMUKAITOU,CHANGDUZAI6-18ZHIJIAN}");
+			alert('用户名必须以字母开头,长度在6-18之间');
 		}
 	}
 </script>

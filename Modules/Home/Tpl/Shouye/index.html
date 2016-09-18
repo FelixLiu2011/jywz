@@ -17,7 +17,7 @@
         	<volist name="q1" id="user">
             <div class="center_2">
             	<a href="__APP__/Haoyouzhuye/index/yhid/{$user.yhid}" target="_blank"><img src="__APP__/Public1/images/{$user.yhtx}" class="dx"></a>
-                <a href="__APP__/Haoyouzhuye/index/yhid/{$user.yhid}" ><p>{$user.yhzh}<if condition="$user.yhhy eq 1"><img src="__APP__/Public1/images/user_vip.jpg" style="width:16px; height:9px"/><else/></if></p></a>
+                <a href="__APP__/Haoyouzhuye/index/yhid/{$user.yhid}" ><p>{$user.yhzh}<if condition="$user.yhhy eq 1"><img src="__APP__/Public1/images/user_vip.jpg" style="width:16px; height:9px;"/><else/></if></p></a>
                 <a href="__APP__/Shouye/pengyou/pyzh/{$user.yhzh}"><img src="__APP__/Public1/images/jj.jpg" class="gd">{$Think.lang.JIAHAOYOU}</a>
                 <p style="width:130px;margin-left:2px;">{$Think.lang.SUOZAIDI}：<if condition="$user.gjdq eq ''">{$Think.lang.WEISHEZHI}<else/>{$user.gjdq}</if></p>
             </div>

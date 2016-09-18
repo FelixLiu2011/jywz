@@ -73,7 +73,7 @@ class LoginAction extends CommAction{
 		{
 			$_SESSION["admin"]=$yhzh;
 			$dq=date("Y-m-d");
-			if($dq>$dqsj)
+			if($dq>$dqsj && $dqsj!='')
 			{
 				$m->execute("update yhb set yhhy=0 where yhzh='$yhzh'");
 			}

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class FaAction extends CommAction
 {
 public function index()
@@ -35,6 +35,8 @@ public function index()
 	public function nr($id)
 	{
 		$id=$_REQUEST["id"];
+		$t=M();
+		$t->execute("update shoujian set sfdq=1 where id='$id'");
 		$m=M();
 		$a=$m->query("select * from shoujian where id='$id'");
 		$this->assign("a",$a);

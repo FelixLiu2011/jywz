@@ -12,7 +12,7 @@ define("HOST", "localhost");
 //数据库的用户名
 define("USR", "root");
 //数据库的密码
-define("PWD","123456");
+define("PWD","admin12345");
 //数据库的名字
 define("DBNAME","jywz");
 //字符集编码

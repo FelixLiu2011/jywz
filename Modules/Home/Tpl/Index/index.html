@@ -14,7 +14,7 @@
 <body>
 <div class="top">
 	<div class="top_1">
-    	<a href="__APP__"><img src="__APP__/Public1/images/roeslove.png"></a>
+    	<a href="__APP__/Home/Index/index"><img src="__APP__/Public1/images/roeslove.png"></a>
         <ul class="nav">
         	<li><a href="__APP__">{$Think.lang.SHOUYE}</a></li>
             <li><a href="__APP__/Kongjian" target="kuangjia">{$Think.lang.KONGJIAN}</a></li>
@@ -30,8 +30,17 @@
             <li style="margin:0 5px;">|</li>
             <li><a href="?l=en-us">English</a></li>
         </ul>
-        <div class="xinxi" style="float:right;margin-top:33px;margin-right:-100px;">       	
-        		<div class="rushou" style="margin-top:27px;"><img src="__APP__/Public1/images/set_img.png"></div>
+	<form id="query" action="__APP__/Pengyou/ss" method="post" target="kuangjia">
+        <input type="text" name="pyzh">
+            <a href="javascript:void(0)" onClick="sub()">Search</a>
+        </form>
+	<script>
+		function sub(){
+			$("#query").submit();
+		}
+	</script>
+        <div class="xinxi">       	
+        		<div class="rushou" style="margin-top:32px;"><img src="__APP__/Public1/images/set_img.png"></div>
                 
             <ul> 
             	<p></p>
@@ -54,15 +63,15 @@
         <ul>
         	<li><a href="__APP__/Chongzhi" target="kuangjia"><img src="__APP__/Public1/images/golds_img.jpg">{$Think.lang.CHONGZHIZHONGXIN}</a></li>
             <li><a href="__APP__/Shengji" target="kuangjia"><img src="__APP__/Public1/images/n_left_shengji.jpg">{$Think.lang.SHENGJIHUIYUAN}</a></li>
-            <li><a href="__APP__/Youjian" target="kuangjia"><img src="__APP__/Public1/images/mail.gif">{$Think.lang.YOUJIAN}</a></li>
-            <li><a href="__APP__/Liwu" target="kuangjia"><img src="__APP__/Public1/images/n_left_gift.jpg">{$Think.lang.LIWU}</a></li>
-            <li><a href="__APP__/Pengyou" target="kuangjia"><img src="__APP__/Public1/images/friends.gif">{$Think.lang.WODEPENGYOU}</a></li>
+            <li><a href="__APP__/Youjian" target="kuangjia"><img src="__APP__/Public1/images/mail.gif">{$Think.lang.YOUJIAN}({$count})</a></li>
+            <li><a href="__APP__/Liwu" target="kuangjia"><img src="__APP__/Public1/images/n_left_gift.jpg">{$Think.lang.LIWU}(<if condition="$qw eq ''">0<else/>{$qw}</if>)</a></li>
+            <li><a href="__APP__/Pengyou" target="kuangjia"><img src="__APP__/Public1/images/friends.gif">{$Think.lang.WODEPENGYOU}({$k1count})</a></li>
             <li><a href="__APP__/Xiangce" target="kuangjia"><img src="__APP__/Public1/images/album.png">{$Think.lang.XIANGCE}</a></li>
             <li><a href="__APP__/Rizhi" target="kuangjia"><img src="__APP__/Public1/images/n_left_rizhi.jpg">{$Think.lang.RIZHI}</a></li>
             <li><a href="__APP__/Kongjian" target="kuangjia"><img src="__APP__/Public1/images/n_left_huodong.png">{$Think.lang.GERENZHUYE}</a></li>
             <li><a href="__APP__/Liuyan" target="kuangjia"><img src="__APP__/Public1/images/n_left_toupiao.jpg">{$Think.lang.LIUYANBAN}</a></li>
             <li><a href="__APP__/Ziliao" target="kuangjia"><img src="__APP__/Public1/images/lt.gif">{$Think.lang.ZILIAO}</a></li>
-            <li><a href="__APP__/Dazhaohu" target="kuangjia"><img src="__APP__/Public1/images/n_left_fenxiang.jpg">{$Think.lang.DAZHAOHU}</a></li>
+            <li><a href="__APP__/Dazhaohu" target="kuangjia"><img src="__APP__/Public1/images/n_left_fenxiang.jpg">{$Think.lang.DAZHAOHU}({$count1})</a></li>
         </ul>
     </div>
     <div class="center_center">
@@ -74,7 +83,7 @@
     <div class="center_right">
     	<p class="ke">{$Think.lang.KEFU}</p>
         <div class="kefu">
-        	<a href="#"><img src="__APP__/Public1/images/avatar.png" class="kefu_1"></a>
+        	<a href="__APP__/Haoyouzhuye/index/yhid/0"><img src="__APP__/Public1/images/avatar.png" class="kefu_1"></a>
             			<a href="haoyoudezhuye.html"><p>{$Think.lang.KEFU}</p></a>
             			<a href="#"><img src="__APP__/Public1/images/addfriends.gif"></a>
         </div>
@@ -88,7 +97,16 @@
             </a>
         </div>
         </volist>
-        
+	<p class="ke">最近访客</p>
+	<volist name="t1" id="user">
+        <div class="kefu">
+        	<a href="__APP__/Haoyouzhuye/index/yhid/{$user.pyid}" target="_blank"><img src="__APP__/Public1/images/{$user.pytx}" class="kefu_1"></a>
+            			<a href="__APP__/Haoyouzhuye/index/yhid/{$user.pyid}" target="_blank"><p>{$user.pymc}</p></a>
+            			<a href="__APP__/Shouye/pengyou1/pyzh/{$user.pymc}"><img src="__APP__/Public1/images/addfriends.gif"></a>
+            </a>
+        </div>
+	
+	</volist>
         
         
         
