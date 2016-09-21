@@ -1,7 +1,6 @@
 ﻿<?php
 class LoginAction extends CommAction{
-	
-	
+
 	//得到验证码图片
 	public function getImage()
 	{
@@ -48,8 +47,13 @@ class LoginAction extends CommAction{
 				}
 				else 
 				{
+                    $ip = get_client_ip();
+                    //$ip='119.75.218.70';
+                    $result = $this->GetIpLookup($ip);
+                    $location=$result['country'].$result['city'];
+
 					$w=M();
-					$b=$w->execute("insert into yhb (yhzh,yhmm,yhyx,yhxb) values ('$yhzh','$yhmm','$yhyx','$yhxb')");
+					$b=$w->execute("insert into yhb (yhzh,yhmm,yhyx,yhxb,yhip,yhdz) values ('$yhzh','$yhmm','$yhyx','$yhxb','$ip','$location')");
 					if($b)
 					{
 						$this->success("注册成功","__APP__/Login",1);
@@ -93,4 +97,23 @@ class LoginAction extends CommAction{
 	
 		$this->success("退出成功","__APP__/Login");//笑脸:)
 	}
+
+    function GetIpLookup($ip = ''){
+        if(empty($ip)){
+            $ip = GetIp();
+        }
+        $res = @file_get_contents('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js&ip=' . $ip);
+        if(empty($res)){ return false; }
+        $jsonMatches = array();
+        preg_match('#\{.+?\}#', $res, $jsonMatches);
+        if(!isset($jsonMatches[0])){ return false; }
+        $json = json_decode($jsonMatches[0], true);
+        if(isset($json['ret']) && $json['ret'] == 1){
+            $json['ip'] = $ip;
+            unset($json['ret']);
+        }else{
+            return false;
+        }
+        return $json;
+    }
 }

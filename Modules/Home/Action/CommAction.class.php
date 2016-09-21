@@ -6,12 +6,11 @@ class CommAction extends Action
 	{
 		//echo $this->getActionName();//得到模块名称
 		//只判断不是登录模块，是否有session
-		if($this->getActionName()!="Login")
+		if($this->getActionName()!="Login" && $this->getActionName()!="Kby1" && $this->getActionName()!="Kby")
 		{
 			if(empty($_SESSION["admin"]))
 			{
 				$this->redirect("__APP__/Home/Login/index");
-	
 			}
 		}
 	}
